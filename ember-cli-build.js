@@ -5,6 +5,10 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
     let app = new EmberApp(defaults, {
+        nodeModulesToVendor: [
+            'node_modules/ember-source/dist/',
+            'node_modules/handlebars/dist/',
+        ],
         'ember-bootstrap': {
             'bootstrapVersion': 4,
             'importBootstrapFont': false,
@@ -12,6 +16,11 @@ module.exports = function(defaults) {
         }
     });
 
+    app.import('vendor/handlebars.amd.js', {
+        exports: {
+            'handlebars': ['default']
+        }
+    });
 
     // Use `app.import` to add additional libraries to the generated
     // output files.
