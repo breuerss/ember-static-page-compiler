@@ -1,0 +1,52 @@
+.project-tree {
+    border-right: solid $gray-200;
+    height: 100vh;
+
+    &.hide {
+        width: 60px;
+        flex-grow: 0;
+        background-color: $gray-200;
+    }
+
+    .menu-bar {
+        background-color: $gray-200;
+        height: 60px;
+        padding: 0 20px;
+
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+
+    }
+
+    i {
+        font-size: 30px;
+    }
+
+    .content-entry,
+    .page-entry,
+    .project-entry {
+        padding: 0 20px;
+        min-height: 60px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: bold;
+        &:hover {
+            background-color: $light;
+        }
+    }
+
+    .project-entry-container,
+    .page-entry-container,
+    .content-entry-container {
+        width: 100%;
+    }
+
+    .page-entry-container,
+    .content-entry-container {
+        padding-left: 10px;
+    }
+}

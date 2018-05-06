@@ -1,0 +1,8 @@
+<div class="project-entry">
+    {{ fa-icon 'book' }}
+    <span>{{project.name}}</span>
+</div>
+{{#each project.pages as |page| }}
+    {{ page-entry page=page }}
+{{/each }}
+

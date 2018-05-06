@@ -1,8 +1,23 @@
 @import "ember-bootstrap/bootstrap";
-body, html,
-.ember-view {
+
+@import "components/project-tree";
+
+body, html {
     height: 100%;
     margin: 0px;
     padding: 0px;
     width: 100%;
+}
+
+.clickable {
+    color: $primary;
+    text-shadow: 1px 1px $gray-500;
+    &:hover {
+        text-shadow: 2px 2px $gray-500;
+        transform: scale(1.1);
+    }
+    &:active {
+        text-shadow: 1px 1px $gray-500;
+        transform: scale(1);
+    }
 }

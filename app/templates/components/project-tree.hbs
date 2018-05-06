@@ -1,0 +1,11 @@
+<div class="menu-bar">
+    {{ fa-icon (if hidden "angle-double-right" "angle-double-left")
+         click=(action 'toggleVisible')
+         class="clickable"
+    }}
+</div>
+{{#unless hidden }}
+    {{# each projects as |project| }}
+        {{ project-entry project=project }}
+    {{/each }}
+{{/unless }}

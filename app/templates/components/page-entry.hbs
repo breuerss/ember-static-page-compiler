@@ -1,0 +1,10 @@
+<div class="page-entry">
+    {{ fa-icon 'file' }}
+    <span>{{ page.title }}</span>
+</div>
+{{#each page.pages as |page| }}
+    {{ page-entry page=page }}
+{{/each }}
+{{#each page.contents as |content| }}
+    {{ content-entry content=content }}
+{{/each }}
