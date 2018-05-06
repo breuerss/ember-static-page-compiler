@@ -8,22 +8,6 @@
         background-color: $gray-200;
     }
 
-    .menu-bar {
-        background-color: $gray-200;
-        height: 60px;
-        padding: 0 20px;
-
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-        align-items: center;
-
-    }
-
-    i {
-        font-size: 30px;
-    }
-
     .content-entry,
     .page-entry,
     .project-entry {
@@ -49,4 +33,21 @@
     .content-entry-container {
         padding-left: 10px;
     }
+}
+
+i.fa {
+    font-size: 30px;
+}
+
+.menu-bar {
+    background-color: $gray-200;
+    height: 60px;
+    padding: 0 20px;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+
+    font-weight: bold;
 }

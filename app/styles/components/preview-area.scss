@@ -1,0 +1,21 @@
+.preview-area {
+    background-color: $white;
+    border-left: solid $gray-200;
+    height: 100vh;
+
+    &.hide {
+        width: 60px;
+        flex-grow: 0;
+        background-color: $gray-200;
+        span {
+            transform: rotate(90);
+        }
+    }
+
+    .content {
+        all: initial;
+        & * {
+            all: unset;
+        }
+    }
+}

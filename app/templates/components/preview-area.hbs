@@ -1,0 +1,19 @@
+<div class="menu-bar">
+    {{ fa-icon (concat 'angle-double-' (if hidden 'left' 'right'))
+        class="clickable"
+        click=(action 'toggleVisible')
+    }}
+    {{#unless hidden }}
+        <span>Preview</span>
+        {{ fa-icon 'desktop'
+            class="clickable"
+            click=(action 'toggleFullscreen')
+        }}
+    {{/unless}}
+</div>
+{{#unless hidden }}
+    <div class="content">
+        <iframe sandbox srcdoc={{{ renderedContent }}}>
+        </iframe>
+    </div>
+{{/unless}}
