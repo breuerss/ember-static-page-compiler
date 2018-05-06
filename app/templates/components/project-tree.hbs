@@ -1,7 +1,8 @@
 <div class="menu-bar">
     {{ fa-icon (if hidden "angle-double-right" "angle-double-left")
-         click=(action 'toggleVisible')
-         class="clickable"
+        click=(action 'toggleVisible')
+        class="clickable"
+        title=(t 'Toogle menu')
     }}
 </div>
 {{#unless hidden }}

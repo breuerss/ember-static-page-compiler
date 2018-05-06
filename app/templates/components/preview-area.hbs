@@ -2,12 +2,14 @@
     {{ fa-icon (concat 'angle-double-' (if hidden 'left' 'right'))
         class="clickable"
         click=(action 'toggleVisible')
+        title=(t 'Toggle menu')
     }}
     {{#unless hidden }}
-        <span>Preview</span>
+        <span>{{ t 'Preview' }}</span>
         {{ fa-icon 'desktop'
             class="clickable"
             click=(action 'toggleFullscreen')
+            title=(t 'Toggle full width preview')
         }}
     {{/unless}}
 </div>
