@@ -1,10 +1,6 @@
 import Ember from 'ember';
+import PageContainer from '../mixins/page-container';
 
-export default Ember.Object.extend({
+export default Ember.Object.extend(PageContainer, {
     name: '',
-    pages: [],
-
-    addPage (page) {
-        this.get('pages').pushObject(page);
-    },
 });
