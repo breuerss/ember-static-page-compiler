@@ -1,8 +1,8 @@
-<div class="project-entry">
+<div class={{concat 'project-entry' (if selected ' selected')}}>
     {{ fa-icon 'book' }}
     <span>{{project.name}}</span>
 </div>
 {{#each project.pages as |page| }}
-    {{ page-entry page=page }}
+    {{ page-entry model=page }}
 {{/each }}
 

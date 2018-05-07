@@ -1,5 +1,7 @@
 import Ember from 'ember';
+import Selectable from './selectable-entry';
 
-export default Ember.Component.extend({
+export default Selectable.extend({
     classNames: ['project-entry-container'],
+    project: Ember.computed.alias('model'),
 });
