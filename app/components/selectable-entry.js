@@ -4,8 +4,9 @@ import Page from '../models/page';
 export default Ember.Component.extend({
     selected: Ember.computed.alias('model.isSelected'),
 
-    click (event) {
-        this.get('model').select();
-        event.stopPropagation();
+    actions: {
+        click () {
+            this.get('model').select();
+        }
     }
 });

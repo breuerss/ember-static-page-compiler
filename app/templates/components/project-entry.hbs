@@ -1,5 +1,6 @@
 {{# link-to 'project.edit' }}
-    <div class={{concat 'project-entry' (if selected ' selected')}}>
+    <div class={{concat 'project-entry' (if selected ' selected')}}
+        {{ action 'click' }}>
         {{ fa-icon 'book' }}
         <span>{{project.name}}</span>
     </div>
