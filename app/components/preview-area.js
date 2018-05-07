@@ -12,7 +12,9 @@ export default Ember.Component.extend({
     fullscreen: false,
 
     templateCompiler: Ember.inject.service(),
-    currentPage: null,
+    projectManager: Ember.inject.service(),
+
+    currentPage: Ember.computed.alias('projectManager.selectedPage'),
     renderedContent: Ember.computed('currentPage', function () {
         let compiled = '';
 
