@@ -6,7 +6,6 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function(defaults) {
     let app = new EmberApp(defaults, {
         nodeModulesToVendor: [
-            'node_modules/ember-source/dist/',
             'node_modules/handlebars/dist/',
             'node_modules/jszip/dist/',
             'node_modules/file-saver/',
@@ -18,7 +17,10 @@ module.exports = function(defaults) {
         }
     });
 
-    app.import('vendor/handlebars.amd.js', {
+    app.import({
+        development: 'vendor/handlebars.amd.js',
+        production: 'vendor/handlebars.amd.min.js',
+    }, {
         exports: {
             'handlebars': ['default']
         }
