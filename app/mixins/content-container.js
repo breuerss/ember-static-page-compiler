@@ -8,7 +8,9 @@ export default Ember.Mixin.create({
     },
 
     addContent (content) {
-        this.get('contents').pushObject(content);
-        content.set('parentModel', this);
+        if (content) {
+            this.get('contents').pushObject(content);
+            content.set('parentModel', this);
+        }
     },
 });
