@@ -3,6 +3,12 @@
         {{ action 'click' }}>
         {{ fa-icon 'book' }}
         <span>{{project.name}}</span>
+        <span class="functions">
+            {{ fa-icon "download"
+                 click=(action 'exportProject')
+                 class="clickable"
+            }}
+        </span>
     </div>
 {{/link-to }}
 {{#each project.pages as |page| }}

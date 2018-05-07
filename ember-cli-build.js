@@ -8,6 +8,8 @@ module.exports = function(defaults) {
         nodeModulesToVendor: [
             'node_modules/ember-source/dist/',
             'node_modules/handlebars/dist/',
+            'node_modules/jszip/dist/',
+            'node_modules/file-saver/',
         ],
         'ember-bootstrap': {
             'bootstrapVersion': 4,
@@ -20,6 +22,16 @@ module.exports = function(defaults) {
         exports: {
             'handlebars': ['default']
         }
+    });
+
+    app.import({
+        development: 'vendor/jszip.js',
+        production: 'vendor/jszip.min.js',
+    });
+
+    app.import({
+        development: 'vendor/FileSaver.js',
+        production: 'vendor/FileSaver.min.js',
     });
 
     // Use `app.import` to add additional libraries to the generated
