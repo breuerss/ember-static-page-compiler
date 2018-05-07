@@ -1,7 +1,9 @@
-<div class={{concat 'project-entry' (if selected ' selected')}}>
-    {{ fa-icon 'book' }}
-    <span>{{project.name}}</span>
-</div>
+{{# link-to 'project.edit' }}
+    <div class={{concat 'project-entry' (if selected ' selected')}}>
+        {{ fa-icon 'book' }}
+        <span>{{project.name}}</span>
+    </div>
+{{/link-to }}
 {{#each project.pages as |page| }}
     {{ page-entry model=page }}
 {{/each }}

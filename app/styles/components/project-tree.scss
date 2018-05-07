@@ -1,4 +1,11 @@
 .project-tree {
+    a {
+        color: $dark;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
     border-right: solid $gray-200;
     height: 100vh;
 
@@ -44,6 +51,11 @@ i.fa {
 }
 
 .menu-bar {
+    &.route {
+        background-color: $gray-600;
+        color: white;
+    }
+
     background-color: $gray-200;
     height: 60px;
     padding: 0 20px;

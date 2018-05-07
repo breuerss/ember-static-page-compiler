@@ -1,0 +1,15 @@
+<div class="menu-bar route">
+    <span>{{t 'Edit Project' }}</span>
+</div>
+<div class="content">
+    {{#if project }}
+        <form>
+            <div class="form-group">
+                <label>{{ t 'Project name' }}</label>
+                {{ input class="form-control" value=project.name }}
+            </div>
+        </form>
+    {{ else }}
+        <p>{{ t 'Please select a project to edit it.'}}</p>
+    {{/if}}
+</div>
