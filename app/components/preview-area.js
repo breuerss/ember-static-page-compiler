@@ -20,12 +20,8 @@ export default Ember.Component.extend({
 
         const currentPage = this.get('currentPage');
         if (currentPage) {
-            const template = currentPage.get('template');
-            const data = currentPage.toNative();
-
             const compiler = this.get('templateCompiler');
-
-            compiled = compiler.compile(template, data);
+            compiled = compiler.compileModel(currentPage);
         }
 
         return compiled;
