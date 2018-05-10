@@ -1,7 +1,21 @@
 import Ember from 'ember';
 export default Ember.Service.extend({
+    storage: Ember.inject.service('project-storage'),
     modelFactory: Ember.inject.service(),
     projects: [],
+
+    init () {
+        this._super(...arguments);
+        this.set('projects', this.get('storage').load());
+        this.backupLoop();
+    },
+
+    backupLoop() {
+        setTimeout(() => {
+            this.get('storage').save(this.get('projects'));
+            this.backupLoop();
+        }, 1000);
+    },
 
     selectedModel: null,
     selectedPage: Ember.computed('selectedModel', function () {
