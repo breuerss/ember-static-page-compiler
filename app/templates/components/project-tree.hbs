@@ -1,4 +1,12 @@
 <div class="menu-bar">
+    {{#unless hidden }}
+        {{# link-to 'project.edit' }}
+            {{ fa-icon "plus"
+                 click=(action 'addProject')
+                 class="clickable"
+            }}
+        {{/ link-to }}
+    {{/unless}}
     {{ fa-icon (if hidden "angle-double-right" "angle-double-left")
         click=(action 'toggleVisible')
         class="clickable"

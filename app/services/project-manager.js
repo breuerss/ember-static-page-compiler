@@ -17,6 +17,12 @@ export default Ember.Service.extend({
         }, 1000);
     },
 
+    addProject () {
+        let project = this.get('modelFactory').create('project');
+        this.get('projects').pushObject(project);
+        this.set('selectedModel', project);
+    },
+
     selectedModel: null,
     selectedPage: Ember.computed('selectedModel', function () {
         const model = this.get('selectedModel');

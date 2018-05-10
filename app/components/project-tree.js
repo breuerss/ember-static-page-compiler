@@ -11,5 +11,8 @@ export default Ember.Component.extend({
         toggleVisible () {
             this.toggleProperty('hidden');
         },
+        addProject () {
+            this.get('projectManager').addProject();
+        },
     }
 });
