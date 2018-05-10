@@ -43,6 +43,7 @@ export default Ember.Mixin.create({
                     let model = factory.create(arrayValue._constructor, {});
                     
                     model.fromData(arrayValue);
+                    model.set('parentModel', this);
                     return model;
                 }));
             }
