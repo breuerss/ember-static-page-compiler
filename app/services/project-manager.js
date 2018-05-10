@@ -1,25 +1,22 @@
 import Ember from 'ember';
-import Project from '../models/project';
-import Page from '../models/page';
-import Content from '../models/content';
-
 export default Ember.Service.extend({
+    modelFactory: Ember.inject.service(),
     projects: [],
 
     selectedModel: null,
     selectedPage: Ember.computed('selectedModel', function () {
         const model = this.get('selectedModel');
-        return this.findClosestOfType(model, Page);
+        return this.findClosestOfType(model, 'page');
     }),
 
     selectedProject: Ember.computed('selectedModel', function () {
         const model = this.get('selectedModel');
-        return this.findClosestOfType(model, Project);
+        return this.findClosestOfType(model, 'project');
     }),
 
     selectedContent: Ember.computed('selectedModel', function () {
         const model = this.get('selectedModel');
-        return this.findClosestOfType(model, Content);
+        return this.findClosestOfType(model, 'content');
     }),
 
     findClosestOfType(model, type) {
@@ -27,7 +24,7 @@ export default Ember.Service.extend({
             return null;
         }
 
-        if (this.is(model, type)) {
+        if (this.get('modelFactory').is(model, type)) {
             return model;
         }
 
@@ -37,10 +34,6 @@ export default Ember.Service.extend({
         }
 
         return this.findClosestOfType(parentModel, type);
-    },
-
-    is (model, type) {
-        return type.prototype.isPrototypeOf(model);
     },
 
 });
