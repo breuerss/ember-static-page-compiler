@@ -13,4 +13,8 @@ export default Ember.Mixin.create({
             content.set('parentModel', this);
         }
     },
+    removeContent (content) {
+        this.get('contents').removeObject(content);
+        content.destroy();
+    },
 });

@@ -18,5 +18,5 @@
     {{ page-entry model=page }}
 {{/each }}
 {{#each page.contents as |content| }}
-    {{ content-entry model=content }}
+    {{ content-entry model=content removeContent='removeContent'}}
 {{/each }}
