@@ -1,4 +1,6 @@
-<div class={{concat 'content-entry' (if selected ' selected')}}>
-    {{ fa-icon "comment-o" }}
-    <span>{{ content.title }}</span>
-</div>
+{{# link-to 'content.edit' }}
+    <div class={{concat 'content-entry' (if selected ' selected')}} {{action 'click'}}>
+        {{ fa-icon "comment-o" }}
+        <span>{{ content.title }}</span>
+    </div>
+{{/ link-to }}

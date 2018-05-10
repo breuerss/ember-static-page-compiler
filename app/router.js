@@ -14,6 +14,10 @@ Router.map(function() {
     this.route('page', function() {
       this.route('edit');
     });
+
+    this.route('content', function() {
+      this.route('edit');
+    });
 });
 
 export default Router;

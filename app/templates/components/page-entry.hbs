@@ -3,6 +3,10 @@
         {{ fa-icon 'file' }}
         <span>{{ page.title }}</span>
         <span class="functions">
+            {{ fa-icon 'comment'
+                click=(action 'addContent')
+                class="clickable"
+            }}
             {{ fa-icon 'minus-circle'
                 click=(action 'removePage')
                 class="clickable text-danger"
