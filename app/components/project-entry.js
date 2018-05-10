@@ -15,16 +15,18 @@ export default Selectable.extend({
             const page = this.get('modelFactory').create('page');
             project.addPage(page);
         },
+
         removePage (page) {
             const project = this.get('project');
             project.removePage(page);
         },
+
         exportProject (event) {
             event.stopPropagation();
             event.preventDefault();
             this.get('zipExporter').export(this.get('project'));
         },
-        delete (event) {
+        deleteProject (event) {
             event.stopPropagation();
             event.preventDefault();
             this.sendAction('deleteProject', this.get('project'));
