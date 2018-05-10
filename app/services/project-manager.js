@@ -23,6 +23,14 @@ export default Ember.Service.extend({
         this.set('selectedModel', project);
     },
 
+    deleteProject (project) {
+        this.get('projects').removeObject(project);
+        if (Ember.isEqual(project, this.get('selectedModel'))) {
+            this.set('selectedModel', null);
+        }
+        project.destroy();
+    },
+
     selectedModel: null,
     selectedPage: Ember.computed('selectedModel', function () {
         const model = this.get('selectedModel');

@@ -15,6 +15,6 @@
 </div>
 {{#unless hidden }}
     {{# each projects as |project| }}
-        {{ project-entry model=project }}
+        {{ project-entry model=project deleteProject='deleteProject'}}
     {{/each }}
 {{/unless }}

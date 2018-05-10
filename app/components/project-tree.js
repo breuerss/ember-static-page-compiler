@@ -14,5 +14,8 @@ export default Ember.Component.extend({
         addProject () {
             this.get('projectManager').addProject();
         },
+        deleteProject (project) {
+            this.get('projectManager').deleteProject(project);
+        }
     }
 });

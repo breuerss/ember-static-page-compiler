@@ -12,5 +12,10 @@ export default Selectable.extend({
             event.preventDefault();
             this.get('zipExporter').export(this.get('project'));
         },
+        delete (event) {
+            event.stopPropagation();
+            event.preventDefault();
+            this.sendAction('deleteProject', this.get('project'));
+        },
     },
 });
