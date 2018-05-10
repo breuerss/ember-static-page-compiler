@@ -4,6 +4,13 @@
         {{ fa-icon 'book' }}
         <span>{{project.name}}</span>
         <span class="functions">
+            {{# link-to 'page.edit' }}
+            {{ fa-icon 'file'
+                class="clickable"
+                click=(action 'addPage')
+                title=(t 'Add page')
+            }}
+            {{/ link-to }}
             {{ fa-icon "download"
                  click=(action 'exportProject')
                  class="clickable"

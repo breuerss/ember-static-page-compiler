@@ -1,7 +1,9 @@
-<div class={{concat 'page-entry' (if selected ' selected')}}>
-    {{ fa-icon 'file' }}
-    <span>{{ page.title }}</span>
-</div>
+{{# link-to 'page.edit' }}
+    <div class={{concat 'page-entry' (if selected ' selected')}} {{action 'click'}}>
+        {{ fa-icon 'file' }}
+        <span>{{ page.title }}</span>
+    </div>
+{{/link-to }}
 {{#each page.pages as |page| }}
     {{ page-entry model=page }}
 {{/each }}

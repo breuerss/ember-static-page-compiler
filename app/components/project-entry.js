@@ -5,8 +5,16 @@ export default Selectable.extend({
     classNames: ['project-entry-container'],
     project: Ember.computed.alias('model'),
     zipExporter: Ember.inject.service(),
+    modelFactory: Ember.inject.service(),
 
     actions: {
+        addPage (event) {
+            event.stopPropagation();
+            event.preventDefault();
+            const project = this.get('project');
+            const page = this.get('modelFactory').create('page');
+            project.addPage(page);
+        },
         exportProject (event) {
             event.stopPropagation();
             event.preventDefault();

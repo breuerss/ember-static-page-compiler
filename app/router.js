@@ -10,6 +10,10 @@ Router.map(function() {
     this.route('project', function() {
       this.route('edit');
     });
+
+    this.route('page', function() {
+      this.route('edit');
+    });
 });
 
 export default Router;
