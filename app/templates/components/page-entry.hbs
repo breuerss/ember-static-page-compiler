@@ -2,6 +2,12 @@
     <div class={{concat 'page-entry' (if selected ' selected')}} {{action 'click'}}>
         {{ fa-icon 'file' }}
         <span>{{ page.title }}</span>
+        <span class="functions">
+            {{ fa-icon 'minus-circle'
+                click=(action 'removePage')
+                class="clickable text-danger"
+            }}
+        </span>
     </div>
 {{/link-to }}
 {{#each page.pages as |page| }}

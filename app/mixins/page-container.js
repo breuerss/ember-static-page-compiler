@@ -13,4 +13,9 @@ export default Ember.Mixin.create({
             page.set('parentModel', this);
         }
     },
+
+    removePage (page) {
+        this.get('pages').removeObject(page);
+        page.destroy();
+    },
 });
