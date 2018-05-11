@@ -22,8 +22,5 @@ export default Ember.Route.extend({
 
             Ember.set(project, 'output', output);
         },
-        download () {
-            console.log('download');
-        },
     }
 });

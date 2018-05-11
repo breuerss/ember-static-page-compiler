@@ -29,7 +29,7 @@ export default Ember.Service.extend({
         if (localStorage) {
             storage = localStorage;
         } else {
-            console.log('locale storage does not exist');
+            // TODO user notification.
         }
 
         return storage;

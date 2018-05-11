@@ -1,3 +1,5 @@
+/* eslint no-control-regex: off */
+/* global JSZip, saveAs */
 import Ember from 'ember';
 
 export default Ember.Service.extend({

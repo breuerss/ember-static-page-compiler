@@ -1,3 +1,3 @@
-export default function i18nMissingMessage(locale, key, context) {
+export default function i18nMissingMessage(locale, key) {
     return key;
 }

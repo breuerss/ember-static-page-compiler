@@ -1,4 +1,5 @@
 import Renderable from './renderable';
+import Ember from 'ember';
 
 export default Renderable.extend({
     title: '',
