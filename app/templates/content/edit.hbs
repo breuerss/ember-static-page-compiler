@@ -3,14 +3,8 @@
     {{#if contentModel }}
         <form>
             {{ template-editor template=contentModel.template }}
-            <div class="form-group">
-                <label>{{ t 'Content title' }}</label>
-                {{ input class="form-control" value=contentModel.title }}
-            </div>
-            <div class="form-group">
-                <label>{{ t 'Content' }}</label>
-                {{ textarea class="form-control" value=contentModel.content rows="10"}}
-            </div>
+            {{ form-input title="Title" value=contentModel.title }}
+            {{ form-textarea title="Content" value=contentModel.content rows=10}}
         </form>
     {{ else }}
         <p>{{ t 'Please select a content to edit it.'}}</p>
