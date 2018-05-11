@@ -2,14 +2,8 @@
 <div class="content">
     {{#if page }}
         <form>
-            <div class="form-group">
-                <label>{{ t 'Page title' }}</label>
-                {{ input class="form-control" value=page.title }}
-            </div>
-            <div class="form-group">
-                <label>{{ t 'Page template' }}</label>
-                {{ textarea class="form-control" value=page.template rows="10"}}
-            </div>
+            {{ template-editor template=page.template }}
+            {{ form-input title="Page title" value=page.title }}
         </form>
     {{ else }}
         <p>{{ t 'Please select a page to edit it.'}}</p>
