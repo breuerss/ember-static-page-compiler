@@ -2,6 +2,7 @@
 <div class="content">
     {{#if contentModel }}
         <form>
+            {{ template-editor template=contentModel.template }}
             <div class="form-group">
                 <label>{{ t 'Content title' }}</label>
                 {{ input class="form-control" value=contentModel.title }}

@@ -1,0 +1,9 @@
+<div class="header">{{ t 'Template' }}
+    {{ fa-icon (concat 'angle-' (if hidden 'down' 'up'))
+        click=(action 'toggleVisibility')
+        class="clickable"
+    }}
+</div>
+{{#unless hidden }}
+    {{ textarea class="form-control" value=template }}
+{{/unless }}
