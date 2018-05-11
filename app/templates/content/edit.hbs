@@ -5,6 +5,10 @@
             {{ template-editor template=contentModel.template }}
             {{ form-input title="Title" value=contentModel.title }}
             {{ form-textarea title="Content" value=contentModel.content rows=10}}
+            {{#each additionalFields as |field| }}
+                {{ form-input title=(concat 'Content ' field)
+                     value=(get contentModel field) }}
+            {{/each }}
         </form>
     {{ else }}
         <p>{{ t 'Please select a content to edit it.'}}</p>
