@@ -6,5 +6,10 @@ export default Renderable.extend({
     template: [
         '<h2>{{title}}</h2>',
         '<p>{{content}}</p>',
-    ].join('')
+    ].join(''),
+    toggle: false,
+    changed: Ember.computed('title', 'content', 'template', function () {
+        this.toggleProperty('toggle');
+        return this.get('toggle');
+    }),
 });

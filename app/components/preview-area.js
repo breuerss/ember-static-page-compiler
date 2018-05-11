@@ -15,11 +15,14 @@ export default Ember.Component.extend({
     projectManager: Ember.inject.service(),
 
     currentPage: Ember.computed.alias('projectManager.selectedPage'),
-    renderedContent: Ember.computed('currentPage', function () {
+    renderedContent: Ember.computed(
+        'currentPage',
+        'currentPage.changed', function () {
         let compiled = '';
 
         const currentPage = this.get('currentPage');
         if (currentPage) {
+            currentPage.get('changed');
             const compiler = this.get('templateCompiler');
             compiled = compiler.compileModel(currentPage);
         }

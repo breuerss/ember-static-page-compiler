@@ -16,4 +16,11 @@ export default Renderable.extend(PageContainer, ContentContainer, {
             '</body>',
         '</html>',
     ].join('\n'),
+    toggle: false,
+    changed: Ember.computed('title', 'template', 'contents.@each.changed', function () {
+        this.toggleProperty('toggle');
+        this.get('contents').filterBy('changed', false);
+
+        return this.get('toggle');
+    }),
 });
