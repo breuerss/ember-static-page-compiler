@@ -12,6 +12,7 @@ body, html {
 }
 
 .clickable {
+    cursor: pointer;
     color: $primary;
     text-shadow: 1px 1px $gray-500;
     &:hover {
