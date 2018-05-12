@@ -1,50 +1,47 @@
-# static-page-compiler
+# ember-static-page-compiler
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+The static page compiler allows for the assemblance of a static web page.
+It is based on the ember framework and handlebars templates.
 
 ## Prerequisites
 
-You will need the following things properly installed on your computer.
-
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with NPM)
-* [Ember CLI](https://ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
+To use this tool a working installation of npm is necessary. Additionally the installation of git is helpful but not obligatory.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd static-page-compiler`
+To install this application either clone this repository with
+
+* `git clone https://github.com/breuerss/ember-static-page-compiler`
+
+or download the zip archive from
+
+* `https://github.com/breuerss/ember-static-page-compiler/archive/master.zip`
+
+and unzip it.
+
+Then install every prerequisites with `npm`:
+
+* `cd ember-static-page-compiler`
 * `npm install`
 
-## Running / Development
+## Running
 
-* `ember serve`
+* `./ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
-### Code Generators
+## Usage
 
-Make use of the many generators for code, try `ember help generate` for more details
+The application runs fully in your browser. The development webserver serves the single page application to your browser.
 
-### Running Tests
+The system allows you to manage several projects. Each can be exported separately as a zip archive. Every page can consist of several pages and subpages. In each page different content elements with potentially different templates can be rendered.
 
-* `ember test`
-* `ember test --server`
+Content elements contain support for a title and a content placeholder by default. Additionally fields or placeholders can be added with the handlebars notation
 
-### Building
+`{{ placeholder-name }}`
 
-* `ember build` (development)
-* `ember build --environment production` (production)
+If your browser supports the localstorage API your projects are stored in your browser. Every time you revisit this page you can continue editing your projects.
 
-### Deploying
+If need support for HTML tags in your content use the following escape sequence
 
-Specify what it takes to deploy your app.
+`{{{ placeholder-name }}}`
 
-## Further Reading / Useful Links
-
-* [ember.js](http://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
