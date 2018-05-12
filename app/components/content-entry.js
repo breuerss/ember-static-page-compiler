@@ -8,7 +8,8 @@ export default Selectable.extend({
         removeContent (event) {
             event.stopPropagation();
             event.preventDefault();
-            this.sendAction('removeContent', this.get('content'));
+            const content = this.get('content');
+            content.get('parentModel').removeContent(content);
         },
     }
 });

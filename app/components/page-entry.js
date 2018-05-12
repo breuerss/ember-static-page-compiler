@@ -18,9 +18,6 @@ export default Selectable.extend({
             let page = this.get('modelFactory').create('page');
             this.get('page').addPage(page);
         },
-        removeContent (content) {
-            this.get('page').removeContent(content);
-        },
         removePage (event) {
             event.stopPropagation();
             event.preventDefault();
