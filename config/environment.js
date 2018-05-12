@@ -3,6 +3,9 @@
 
 module.exports = function(environment) {
   let ENV = {
+      i18n: {
+          defaultLocale: 'en',
+      },
     modulePrefix: 'static-page-compiler',
     environment,
     rootURL: '/',
