@@ -24,7 +24,8 @@ export default Selectable.extend({
         removePage (event) {
             event.stopPropagation();
             event.preventDefault();
-            this.sendAction('removePage', this.get('page'));
+            const page = this.get('page');
+            page.get('parentModel').removePage(page);
         },
     }
 

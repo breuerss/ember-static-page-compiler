@@ -15,12 +15,6 @@ export default Selectable.extend({
             const page = this.get('modelFactory').create('page');
             project.addPage(page);
         },
-
-        removePage (page) {
-            const project = this.get('project');
-            project.removePage(page);
-        },
-
         exportProject (event) {
             event.stopPropagation();
             event.preventDefault();
