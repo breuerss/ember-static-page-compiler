@@ -1,16 +1,13 @@
 import Ember from 'ember';
+import Hideable from '../mixins/hideable';
 
-export default Ember.Component.extend({
+export default Ember.Component.extend(Hideable, {
     classNames: ['project-tree'],
     classNameBindings: ['hidden:hide'],
-    hidden: false,
     projectManager: Ember.inject.service(),
     projects: Ember.computed.alias('projectManager.projects'),
 
     actions: {
-        toggleVisible () {
-            this.toggleProperty('hidden');
-        },
         addProject () {
             this.get('projectManager').addProject();
         },

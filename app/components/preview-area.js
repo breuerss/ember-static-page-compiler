@@ -1,6 +1,7 @@
 import Ember from 'ember';
+import Hideable from '../mixins/hideable';
 
-export default Ember.Component.extend({
+export default Ember.Component.extend(Hideable, {
     classNames: ['preview-area'],
     classNameBindings: [
         'hidden:hide',
@@ -8,7 +9,6 @@ export default Ember.Component.extend({
         'fullscreen:col-md-12:col-md',
         'fullscreen:fixed-top',
     ],
-    hidden: false,
     fullscreen: false,
 
     templateCompiler: Ember.inject.service(),
@@ -31,8 +31,8 @@ export default Ember.Component.extend({
     }),
 
     actions: {
-        toggleVisible () {
-            this.toggleProperty('hidden');
+        toggleVisibility () {
+            this._super(...arguments);
             this.set('fullscreen', false);
         },
         toggleFullscreen () {
