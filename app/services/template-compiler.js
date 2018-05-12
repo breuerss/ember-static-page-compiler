@@ -10,8 +10,12 @@ export default Ember.Service.extend({
     },
 
     compile (layout, data) {
-        const template = Handlebar.compile(layout);
+        try {
+            const template = Handlebar.compile(layout);
 
-        return template(data);
+            return template(data);
+        } catch (err) {
+            return '';
+        }
     }
 });
