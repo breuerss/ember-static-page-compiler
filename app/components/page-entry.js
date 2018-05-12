@@ -1,7 +1,8 @@
 import Ember from 'ember';
 import Selectable from './selectable-entry';
+import Hideable from '../mixins/hideable';
 
-export default Selectable.extend({
+export default Selectable.extend(Hideable, {
     classNames: ['page-entry-container'],
     page: Ember.computed.alias('model'),
     modelFactory: Ember.inject.service(),

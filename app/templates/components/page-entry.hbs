@@ -1,6 +1,12 @@
 {{# link-to 'page.edit' }}
     <div class={{concat 'page-entry' (if selected ' selected')}} {{action 'click'}}>
-        {{ fa-icon 'file' }}
+        <span class="functions">
+            {{ fa-icon (concat 'angle-' (if hidden 'down' 'up'))
+                class="clickable"
+                click=(action 'toggleVisibility')
+            }}
+            {{ fa-icon 'file' }}
+        </span>
         <span>{{ page.title }}</span>
         <span class="functions">
             {{ fa-icon 'comment'
@@ -18,9 +24,11 @@
         </span>
     </div>
 {{/link-to }}
-{{#each page.pages as |page| }}
-    {{ page-entry model=page }}
-{{/each }}
-{{#each page.contents as |content| }}
-    {{ content-entry model=content}}
-{{/each }}
+{{# unless hidden }}
+    {{#each page.pages as |page| }}
+        {{ page-entry model=page }}
+    {{/each }}
+    {{#each page.contents as |content| }}
+        {{ content-entry model=content}}
+    {{/each }}
+{{/unless }}

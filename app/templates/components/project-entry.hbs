@@ -1,7 +1,13 @@
 {{# link-to 'project.edit' }}
     <div class={{concat 'project-entry' (if selected ' selected')}}
         {{ action 'click' }}>
-        {{ fa-icon 'book' }}
+        <span class="functions">
+            {{ fa-icon (concat 'angle-' (if hidden 'down' 'up'))
+                class="clickable"
+                click=(action 'toggleVisibility')
+            }}
+            {{ fa-icon 'book' }}
+        </span>
         <span>{{project.name}}</span>
         <span class="functions">
             {{# link-to 'page.edit' }}
@@ -22,7 +28,9 @@
         </span>
     </div>
 {{/link-to }}
-{{#each project.pages as |page| }}
-    {{ page-entry model=page}}
-{{/each }}
+{{#unless hidden }}
+    {{#each project.pages as |page| }}
+        {{ page-entry model=page}}
+    {{/each }}
+{{/unless}}
 
