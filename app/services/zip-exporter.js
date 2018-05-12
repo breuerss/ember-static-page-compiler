@@ -31,7 +31,7 @@ export default Ember.Service.extend({
 
             let subPages = page.get('pages');
             if (subPages.length > 0) {
-                this.renderPagesToFolder(zip, subPages, fileName);
+                this.renderPagesToFolder(folder, subPages, fileName);
             }
 
             const content = compiler.compileModel(page);
