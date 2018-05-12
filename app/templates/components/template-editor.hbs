@@ -1,6 +1,5 @@
-<div class="header">{{ t 'Template' }}
+<div class="header" {{action 'toggleVisibility'}}>{{ t 'Template' }}
     {{ fa-icon (concat 'angle-' (if hidden 'down' 'up'))
-        click=(action 'toggleVisibility')
         class="clickable"
     }}
 </div>
