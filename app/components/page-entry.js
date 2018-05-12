@@ -12,6 +12,12 @@ export default Selectable.extend({
             let content = this.get('modelFactory').create('content');
             this.get('page').addContent(content);
         },
+        addPage (event) {
+            event.stopPropagation();
+            event.preventDefault();
+            let page = this.get('modelFactory').create('page');
+            this.get('page').addPage(page);
+        },
         removeContent (content) {
             this.get('page').removeContent(content);
         },
