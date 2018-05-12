@@ -7,6 +7,16 @@ export default Ember.Component.extend(Hideable, {
     projectManager: Ember.inject.service(),
     projects: Ember.computed.alias('projectManager.projects'),
 
+    init () {
+        this._super(...arguments);
+        let mediaQuery = window.matchMedia("(max-width: 767px)");
+        this.set('hidden', mediaQuery.matches);
+        mediaQuery
+        .addListener(mediaQuery => {
+            this.set('hidden', mediaQuery.matches);
+        });
+    },
+
     actions: {
         addProject () {
             this.get('projectManager').addProject();

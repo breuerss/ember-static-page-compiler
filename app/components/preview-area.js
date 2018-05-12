@@ -11,6 +11,16 @@ export default Ember.Component.extend(Hideable, {
     ],
     fullscreen: false,
 
+    init () {
+        this._super(...arguments);
+        let mediaQuery = window.matchMedia("(max-width: 991px)");
+        this.set('hidden', mediaQuery.matches);
+        mediaQuery
+        .addListener(mediaQuery => {
+            this.set('hidden', mediaQuery.matches);
+        });
+    },
+
     templateCompiler: Ember.inject.service(),
     projectManager: Ember.inject.service(),
 
