@@ -45,3 +45,8 @@ If need support for HTML tags in your content use the following escape sequence
 
 `{{{ placeholder-name }}}`
 
+Assets can be stored on a per project basis. Assets can be referenced with the {{ asset <asset-name> }} helper in the template. By using the helper in the template a preview is possible. By default assets are stored in the assets directory. Hence, they can be also accessed via their path (/assets/<asset-name>).
+
+There is currently no filetype restriction implemented. The size of the assets being stored is limited by the quote of your browser's localStorage implementation.
+
+The assets can be used to add javascript, css or image files to your page.
