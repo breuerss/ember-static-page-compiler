@@ -1,0 +1,9 @@
+<label>{{ t 'Upload Asset'}}</label>
+{{ asset-uploader assets=assets class="form-control-file"}}
+<div class="assets">
+    <label>{{ t 'Assets'}}</label>
+    {{#each assets as |asset|}}
+        {{ asset-entry asset=asset deleteAsset='deleteAsset'}}
+    {{/each}}
+</div>
+

@@ -2,11 +2,13 @@ import Ember from 'ember';
 import Project from '../models/project';
 import Page from '../models/page';
 import Content from '../models/content';
+import Asset from '../models/asset';
 
 const switchObj = {
     project: Project,
     page: Page,
     content: Content,
+    asset: Asset,
 };
 
 export default Ember.Service.extend({

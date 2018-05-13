@@ -5,4 +5,8 @@ import Serializable from '../mixins/serializable';
 
 export default Ember.Object.extend(Serializable, Selectable, PageContainer, {
     name: '',
+    init () {
+        this._super(...arguments);
+        this.set('assets', []);
+    },
 });

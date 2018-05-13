@@ -8,6 +8,7 @@
                 <label>{{ t 'Project name' }}</label>
                 {{ input class="form-control" value=project.name }}
             </div>
+            {{ asset-manager assets=project.assets }}
         </form>
     {{ else }}
         <p>{{ t 'Please select a project to edit it.'}}</p>

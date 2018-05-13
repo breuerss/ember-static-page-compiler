@@ -1,0 +1,9 @@
+<div class="name">{{ asset.name }}</div>
+<div class="properties">
+    <div class="type">{{ asset.type }}</div>
+    <div class="size">{{ asset.size }}</div>
+</div>
+{{ fa-icon 'minus-circle'
+    class="clickable text-danger" 
+    click=(action 'deleteAsset')
+}}

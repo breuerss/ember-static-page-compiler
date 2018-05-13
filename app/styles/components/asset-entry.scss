@@ -1,0 +1,15 @@
+.asset-entry {
+    background-color: $light;
+    display: flex;
+    height: 60px;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px;
+    border-radius: 4px;
+    .name {
+        width: 60%;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}
