@@ -2,6 +2,7 @@ import Ember from 'ember';
 import Handlebar from 'handlebars';
 
 export default Ember.Service.extend({
+    preview: true,
     compileModel (model) {
         const data = model.toNative();
         const layout = model.get('template');

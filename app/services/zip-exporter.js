@@ -27,6 +27,7 @@ export default Ember.Service.extend({
     renderPagesToFolder(zip, pages, folderName) {
         let folder = zip.folder(folderName);
         const compiler = this.get('templateCompiler');
+        compiler.set('preview', false);
         pages.forEach(page => {
             const fileName = this.getSaveFileName(page.get('title'));
 

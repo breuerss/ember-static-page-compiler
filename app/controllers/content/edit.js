@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
                 return field.replace('{{', '').replace('}}', '').trim();
             });
 
-            fields = fields.filter(field => !field.match(/(title|content)/));
+            fields = fields.filter(field => !field.match(/(title|content|asset)/));
         }
 
         return fields;

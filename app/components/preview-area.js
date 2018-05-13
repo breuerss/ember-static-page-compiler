@@ -34,6 +34,7 @@ export default Ember.Component.extend(Hideable, {
         if (currentPage) {
             currentPage.get('changed');
             const compiler = this.get('templateCompiler');
+            compiler.set('preview', true);
             compiled = compiler.compileModel(currentPage);
         }
 
